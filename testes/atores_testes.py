@@ -24,6 +24,8 @@ class AtorTestes(TestCase):
 
     def teste_valores_passados_por_parametro(self):
         'Testa se valores passados no inicializador são armazenados no objeto'
+
+
         ator = Ator(1, 2)
         self.assertEqual(1, ator.x)
         self.assertEqual(2, ator.y)
