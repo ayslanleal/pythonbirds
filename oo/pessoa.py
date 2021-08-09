@@ -1,10 +1,10 @@
 
 class Pessoa:
     olhos = 3
-    def __init__(self,*filhos, nome=None, idade=35):
+    def __init__(self, nome=None, idade=int):
         self.nome = nome
         self.idade = idade
-        self.filhos = list(filhos)
+        #self.filhos = list(filhos)
 
 
     def cumprimentar(self):
@@ -19,7 +19,8 @@ class Pessoa:
         return f'{cls} - olhos: {cls.olhos}'
 
 class Homem(Pessoa):
-    pass
+    def cumprimentar(self):
+        return 'Aperto de mão'
 
 class Mutante(Pessoa):
     olhos = 3
@@ -28,11 +29,18 @@ class Mutante(Pessoa):
 
 if __name__ == '__main__':
     luciano = Pessoa(nome='Luciano')
-    renzo = Pessoa(luciano,nome='Renzo')
+    #renzo = Pessoa(luciano,nome='Renzo')
     print(luciano.cumprimentar())
     print(luciano.nome)
-    for i in renzo.filhos:
-        print(renzo.nome)
+    #for i in renzo.filhos:
+    #    print(renzo.nome)
     print(luciano.nome_e_atributos_de_classe())
     print(luciano.metodo_estatico())
+
+    ronaldo = Pessoa('Ronaldo',35)
+    print(ronaldo.idade)
+    renzo = Homem(nome='Renzo')
+    print(renzo.cumprimentar())
+    print(luciano.cumprimentar())
+
 
