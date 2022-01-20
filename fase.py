@@ -74,7 +74,7 @@ class Fase():
         :return:
         """
         if not self._possui_porco_ativo():
-            return VITORIA
+            return EM_ANDAMENTO
         elif self._possui_passadors_ativos():
             return EM_ANDAMENTO
         else:
@@ -114,13 +114,13 @@ class Fase():
 
     def _possui_porco_ativo(self):
         for porco in self._porcos:
-            if porco.status == ATIVO:
+            if porco.status==ATIVO:
                 return True
         return False
 
     def _possui_passadors_ativos(self):
         for passaro in self._passaros:
-            if passaro.status == ATIVO:
+            if passaro.status==ATIVO:
                 return True
         return False
 

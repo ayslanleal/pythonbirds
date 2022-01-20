@@ -5,6 +5,7 @@ import sys
 from os import path
 from unittest.case import TestCase
 
+
 project_dir = path.dirname(__file__)
 project_dir = path.join('..')
 sys.path.append(project_dir)
@@ -118,7 +119,7 @@ class FaseTestes(TestCase):
         self.assertEqual(VITORIA, fase.status())
 
         fase.adicionar_obstaculo(Obstaculo())
-        self.assertEqual(VITORIA, fase.status(),
+        self.assertEqual(EM_ANDAMENTO, fase.status(),
                          'Obstáculo não interfere no fim do jogo')
 
         fase.adicionar_porco(PorcoFake())
